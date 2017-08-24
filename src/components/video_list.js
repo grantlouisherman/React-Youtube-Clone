@@ -7,10 +7,8 @@ export default ({videos, onVideoSelect}) => {
     return (
         <ul className="col-md-4 list-group">
             {
-     
-                videos.map( 
-                    video => {
-                    return (
+            videos.map( video => {
+                return (
                     <VideoListItem 
                             video={video} 
                             key={video.etag}

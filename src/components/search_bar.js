@@ -3,16 +3,20 @@ import React, {Component} from 'react';
 export default class extends Component{
     constructor(props){
         super(props);
-        this.handleInputChange = this.handleInputChange.bind(this);
+        this.onInputChange = this.onInputChange.bind(this);
     }
 
-    handleInputChange(evt){
-
+    onInputChange(term){
+        this.setState({term})
+        this.props.onSearchTermChange(term);
     }
     
     render(){
         return(
-            <input onChange={this.handleInputChange}/>
+            <div className="search-bar">
+                 <input onChange={event => this.onInputChange(event.target.value)}/>
+            </div>
+           
         )
     }
 }
